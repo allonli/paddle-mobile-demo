@@ -78,7 +78,7 @@ class MobileNetModelLoaderImpl : ModelLoader() {
         val assetPath = "pml_demo"
         val sdcardPath = (Environment.getExternalStorageDirectory().toString()
                 + File.separator + assetPath + File.separator + type)
-        PML.load(sdcardPath)
+        PML.load(sdcardPath,false)
     }
 
     override fun predictImage(inputBuf: FloatArray): FloatArray? {
