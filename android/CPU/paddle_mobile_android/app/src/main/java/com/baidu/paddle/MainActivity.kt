@@ -64,7 +64,7 @@ class MainActivity : Activity(), AnkoLogger {
     private var mCurrentType = modelList[0]
 
 
-    val threadCountList: ArrayList<Int> by lazy {
+    private val threadCountList: ArrayList<Int> by lazy {
         Runtime.getRuntime().availableProcessors()
         val list = ArrayList<Int>()
         for (i in (1..Runtime.getRuntime().availableProcessors() / 2)) {
@@ -84,7 +84,7 @@ class MainActivity : Activity(), AnkoLogger {
     /**
      * check whether sdcard is mounted
      */
-    val isHasSdCard: Boolean
+    private val isHasSdCard: Boolean
         get() = Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED
 
 
@@ -343,8 +343,8 @@ class MainActivity : Activity(), AnkoLogger {
                         tv_infomain.text = mModelLoader.getMainMsg()
                         tv_preinfos.text =
                                 mModelLoader.getDebugInfo() + "\n" +
-                                mModelLoader.timeInfo + "\n" +
-                                "点击查看结果"
+                                        mModelLoader.timeInfo + "\n" +
+                                        "点击查看结果"
 
                         tv_preinfos.setOnClickListener {
                             MaterialDialog.Builder(this@MainActivity)
@@ -365,7 +365,7 @@ class MainActivity : Activity(), AnkoLogger {
                 })
     }
 
-    fun clearInfos() {
+    private fun clearInfos() {
         tv_infos.text = ""
         tv_preinfos.text = ""
     }

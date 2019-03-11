@@ -16,7 +16,7 @@
         android:maxLines="5"
         android:minLines="5"
         android:textSize="30sp"
-        tools:text="我是一些信息哈哈哈" />
+        tools:text="我是一些信息" />
 
     <LinearLayout
         android:id="@+id/ll_test"
